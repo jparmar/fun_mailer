@@ -51,4 +51,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ruby REST API
 gem 'grape'
+ 
+# bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'rake', '12.0.0'
+
 
