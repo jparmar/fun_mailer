@@ -1,27 +1,34 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Categories</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Category', new_category_path %>
+<div class="panel panel-default" style="width:45%;" >
+	<div class="panel-heading"><h3><b>Categories</b></h3></div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-3">
+				<h4 style="color:orange;"><b>Name</b></h4>
+			</div>
+		</div>
+		<hr>
+		  <% @categories.each do |category| %>
+		<div class="row">
+			<div class="col-md-2">
+				<h5><b><%= link_to "#{category.name}", category %></b></h5>
+			</div>
+			<div class="col-md-6"></div>
+			<!-- <div class="col-md-1">
+				<%= link_to 'Show', category %>
+			</div> -->
+			<div class="col-md-1">
+				<%= link_to "<i class='glyphicon glyphicon-pencil'></i>".html_safe,  edit_category_path(category) %>
+			</div>
+			<div class="col-md-1">
+				<%= link_to "<i class='glyphicon glyphicon-trash'></i>".html_safe ,category, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</div>
+				<!-- <%= link_to 'Show', category %>&nbsp;&nbsp;&nbsp;<%= link_to 'Edit', edit_category_path(category) %>&nbsp;&nbsp;&nbsp;
+				<%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+		</div>
+		  <% end %>
+	</div>
+	<div class="panel-footer">
+		<div class="btn btn-default"><span class="glyphicon glyphicon-plus orange"></span>&nbsp;<b><%= link_to 'ADD', new_category_path, {:style=> 'color:black;'} %></b></div>
+	</div>
+</div>	

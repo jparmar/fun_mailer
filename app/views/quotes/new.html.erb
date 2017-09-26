@@ -1,5 +1,25 @@
-<h1>New Quote</h1>
+<div class="panel panel-default" style="width: 70%">
+
+<div class="panel-heading">
+	<h3>New Quote</h3>
+</div>
+</div>
+<% if @quote.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@quote.errors.count, "error")} prohibited this  from being saved:" %>
+      </h2>
+      <ul>
+        <% @quote.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+ <% end %>
 
 <%= render 'form', quote: @quote %>
 
-<%= link_to 'Back', quotes_path %>
+<%= link_to 'Back', quotes_path %> 
+

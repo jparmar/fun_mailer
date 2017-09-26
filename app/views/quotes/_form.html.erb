@@ -1,23 +1,24 @@
 <%= form_for(quote) do |f| %>
-  <% if quote.errors.any? %>
+  <!-- <% if quote.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this category from being saved:</h2>
 
       <ul>
-      <% quote.errors.full_messages.each do |message| %>
+      <!-- <% quote.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> -->
 
   <div class="field">
-  	
-    <%= f.label :name %>
-    <%= f.text_area :name %>
+    <h4> <%= f.label :name, style: 'margin-top: -8px; color: orange; font-weight: bold;' %></h4>
+    
+		<%= select_tag "categories", options_from_collection_for_select(@categories, "id", "name"), :multiple=>false, :prompt=>"Select category" %>
+    	<br /><br /><%= f.text_area :name, cols: "25", rows: "3" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+   <%= f.submit :class=>'btn btn-success' %>
   </div>
 <% end %>

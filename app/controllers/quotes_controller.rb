@@ -5,6 +5,7 @@ class QuotesController < ApplicationController
   # GET /quotes.json
   def index
     @quotes = Quote.all
+    @categories = Category.all
   end
 
   # GET /quotes/1
@@ -15,6 +16,7 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   def new
     @quote = Quote.new
+    @categories = Category.all
   end
 
   # GET /quotes/1/edit
@@ -25,7 +27,7 @@ class QuotesController < ApplicationController
   # POST /quotes.json
   def create
     @quote = Quote.new(quote_params)
-
+    @quote.category_id = 1
     respond_to do |format|
       if @quote.save
         format.html { redirect_to @quote, notice: 'Quote was successfully created.' }
