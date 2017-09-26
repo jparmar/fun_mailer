@@ -1,11 +1,11 @@
 class QuotesController < ApplicationController
-  before_action :set_quote, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_quote, :set_categories, only: [:show, :edit, :update, :destroy]
+  
   # GET /quotes
   # GET /quotes.json
   def index
     @quotes = Quote.all
-    @categories = Category.all
+   
   end
 
   # GET /quotes/1
@@ -16,7 +16,6 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   def new
     @quote = Quote.new
-    @categories = Category.all
   end
 
   # GET /quotes/1/edit
@@ -67,6 +66,10 @@ class QuotesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_quote
       @quote = Quote.find(params[:id])
+    end
+    
+    def set_categories
+      @categories = Category.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
