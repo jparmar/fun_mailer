@@ -59,4 +59,6 @@ gem 'rake', '12.0.0'
 
 gem 'hirb'
 
+gem 'image_magick'
 
+gem "paperclip"
