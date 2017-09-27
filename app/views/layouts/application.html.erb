@@ -11,7 +11,7 @@
 
   <body>
   	
-  	 <section id="container">
+  	 <div id="container">
         <header class="header black-bg">
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars" data-placement="right" data-original-title="Toggle Navigation"></div>
@@ -19,46 +19,39 @@
             <!--logo start-->
             <a href="GenerateRequests" class="logo font"><b>One Advanced</b></a>
             <!--logo end-->
-
-        </header>
-        <aside>
-            <div id="sidebar" class="nav-collapse " style="font-family:'Lato';">
-                <!-- sidebar menu start-->
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <li class="mt font hover">
-                        <a href="#">
+		
+			<ul class="nav navbar-nav navbar-right">
+                    <li class="hover">
+                        <a href="#" class="font">
                             <i class="fa fa-dashboard"></i>
                             <span><h4>Dashboard</h4></span>
                         </a>
                     </li>
-                            <li>
-                                <a href="/categories">
-                                    <i class="fa fa-tasks" aria-hidden="true"></i><span><h4>Categories</h4></span>
-                                </a>
-                            <li class="sub-menu font">
-                                <a href="/quotes">
+                    <li class="hover">
+                      	  <a href="/categories" class="font">
+                             <i class="fa fa-tasks" aria-hidden="true"></i><span><h4>Categories</h4></span>
+                         </a>
+                    </li>
+                    <li class="hover">
+                          <a href="/quotes" class="font">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                     <span><h4>Quotes</h4></span>
-                                </a>
-                            </li>
+                          </a>
+                    </li>
                     
                 </ul>
-                <!-- sidebar menu end-->
-            </div>
-        </aside>
-        <!--sidebar end-->
-
-    </section>
-       <section id="main-content">
-        <section class="wrapper" style="height: 800px">
-
+		
+        </header>
+    </div>
+       <!-- <section id="main-content">-->
+        <div class="wrapper" style="height: 800px"> 
             <div class="row mt">
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                 		<%= yield %>
                 </div>
             </div>  
         
-         </section>
-    </section>
+         </div>
+   <!-- </section> -->
      </body>
 </html>
