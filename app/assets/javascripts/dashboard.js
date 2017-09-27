@@ -8,5 +8,5 @@ function onCategory(categoryId){
       success : function (data) {
       $('#categoryQuotes').html(data);
     }
-    })
+    });
 }
