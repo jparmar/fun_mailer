@@ -9,7 +9,7 @@ default: &default
   pool: 5
   timeout: 5000
   username: root
-  password: krishna
+  password: pass
   host: 127.0.0.1
   socket: mysql
   port: 3306

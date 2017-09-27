@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+ 
  #Index action, photos gets listed in the order at which they were created
  def index
   @photos = Photo.order('created_at')
@@ -7,16 +8,17 @@ class PhotosController < ApplicationController
  #New action for creating a new photo
  def new
   @photo = Photo.new
-  @categories = Category.all
+  @category_options = Category.all.map{|u|[u.name, u.id]}
  end
 
  #Create action ensures that submitted photo gets created if it meets the requirements
  def create
-  @categories = Category.all
+   @category_options = Category.all.map{|u|[u.name, u.id]}
   @photo = Photo.new(photo_params)
+
   if @photo.save
    flash[:notice] = "Successfully added new photo!"
-   redirect_to root_path
+   redirect_to "/photos"
   else
    flash[:alert] = "Error adding new photo!"
    render :new
@@ -29,4 +31,5 @@ class PhotosController < ApplicationController
  def photo_params
   params.require(:photo).permit(:category_id, :title, :image)
  end
+
 end
