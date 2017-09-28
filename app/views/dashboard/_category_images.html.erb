@@ -2,7 +2,7 @@
 <% if @category_images %>
 	<% @category_images.each do |photo| %>
 		<div class="">
-	    	<%= link_to image_tag(photo.image.url, class: 'media-object'), photo.image.url %>
+	    	<%= image_tag(photo.image.url, class: 'media-object') %>
 		</div>
 	 <% end %>
 <% end %>
