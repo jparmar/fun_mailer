@@ -24,3 +24,17 @@ function onCategory(categoryId){
   });
   
 }
+
+function getVValue(id){
+	console.log(id);
+	//Get images for selected category
+  var imgs = $.ajax({
+      		url: 'dashboard/getQuote',
+      		type: "GET",
+      		data: {"id" :id},
+      		dataType : "html"
+  		});
+  $.when(imgs).done(function(imgs){
+  	console.log(imgs);
+  });
+}
