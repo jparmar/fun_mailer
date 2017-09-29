@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20170926070004) do
     t.string   "name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "cat_id"
     t.integer  "category_id"
     t.index ["category_id"], name: "index_quotes_on_category_id", using: :btree
   end
