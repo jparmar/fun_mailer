@@ -1,10 +1,15 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  #skip_before_filter :verify_authenticity_token
+  #protect_from_forgery prepend: true, with: :exception
+  #before_action :authenticate_user!
+  #before_action :set_bug, only: [:show, :edit, :update]
 
   # GET /categories
   # GET /categories.json
   def index
     @categories = Category.all
+    @quotes = Quote.all
   end
 
   # GET /categories/1

@@ -1,5 +1,35 @@
-<h1>New Quote</h1>
+<div class="panel panel-default" style="width: 70%">
+		
+	<div class="panel-heading">
+			<h3><b>New Quote</b></h3>
+	</div>
+<div class="panel-body">
+	<div class="row">
+		<div class="col-md-7">
+			
+			<% if @quote.errors.any? %>
+			   <div id="error_explanation">
+			     <h2>
+			        <%= "#{pluralize(@quote.errors.count, "error")} prohibited this  from being saved:" %>
+			     </h2>
+			      <ul>
+				       <% @quote.errors.full_messages.each do |msg| %>
+				        <li>
+				           <%= msg %>
+				        </li>
+				 	   <% end %>
+		     	 </ul>
+		      </div>
+		      <% end %>
+			<%= render 'form', quote: @quote %>
+	 	</div>
+	 </div>
+ </div>
+<div class="panel-footer">
+	<div class="btn btn-default"><b><%= link_to 'Back', quotes_path %> </b></div>
+</div>
+</div>
 
-<%= render 'form', quote: @quote %>
 
-<%= link_to 'Back', quotes_path %>
+
+

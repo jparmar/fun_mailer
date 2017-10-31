@@ -57,4 +57,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'rake', '12.0.0'
 
+gem 'hirb'
 
+gem 'image_magick'
+
+gem "paperclip"

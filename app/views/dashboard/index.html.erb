@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="col-md-6" style="border-right: 1px solid #BEBEBE;line-height: 100px;">
+		<div class="row">
+			<div class="col-md-9">
+				<%= select_tag "categories", options_from_collection_for_select(@categories, "id", "name"),:class=>'btn-group btn btn-default dropdown-toggle' ,:multiple=>false, :prompt =>"Select category",
+	 			:onchange => "onCategory(this.value)" %>
+	 		</div>
+	 	</div>
+	 	
+	 	<div class="row">
+	 		<div class="col-md-12">
+		 		<div id="categoryQuotes">
+					<%= render :partial => 'category_quotes',:object => @qoutes %>
+				</div>
+			</div>
+	 	</div>
+	 	
+	 	<div class="row">
+	 		<div class="col-md-12">
+		 		<div id="categoryImages">
+		 			<%= render :partial => 'category_images',:object => @category_images %>
+				</div>
+			</div>
+	 	</div>
+	 	
+	 	<div class="row">
+	 		<div class="col-md-12">
+	 			<textarea class="form-control" type="textarea" id="greeting-message" placeholder="Your message" maxlength="140" rows="3"></textarea>
+	 		</div>
+	 	</div>
+	 	<button class="btn btn-info"  onclick="generateGreeting()">Generate</button>
+	</div>
+	<div class="col-md-6">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="greeting-board">
+					<canvas id="greetingCanvas" width="640" height="480"></canvas>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<button class="btn btn-info"  onclick="takeSnap()">Take a snap</button>
+			</div>
+		</div>
+	</div>
+</div>

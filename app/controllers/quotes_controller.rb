@@ -1,6 +1,7 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
-
+  
+  
   # GET /quotes
   # GET /quotes.json
   def index
@@ -15,17 +16,21 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   def new
     @quote = Quote.new
+    @category_options = Category.all.map{|u|[u.name, u.id]}
+    
   end
 
   # GET /quotes/1/edit
   def edit
+    @category_options = Category.all.map{|u|[u.name, u.id]}
   end
 
   # POST /quotes
   # POST /quotes.json
   def create
+    @category_options = Category.all.map{|u|[u.name, u.id]}
     @quote = Quote.new(quote_params)
-
+    #@quote.category_id = 1
     respond_to do |format|
       if @quote.save
         format.html { redirect_to @quote, notice: 'Quote was successfully created.' }
@@ -69,6 +74,6 @@ class QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:name)
+      params.require(:quote).permit(:name, :category_id)
     end
 end

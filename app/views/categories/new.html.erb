@@ -1,5 +1,14 @@
-<h1>New Category</h1>
+<div class="panel panel-default" style="width: 70%">
+		
+	<div class="panel-heading">
 
-<%= render 'form', category: @category %>
+		<h3><b> Category</b></h3>
+	</div>
+	<div class="panel-body">
 
-<%= link_to 'Back', categories_path %>
+		<%= render 'form', category: @category %>
+	</div>
+	<div class="panel-footer">
+
+		<div class="btn btn-default"><b><%= link_to 'Back', categories_path %></b></div>
+	</div>

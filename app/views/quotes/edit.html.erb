@@ -1,6 +1,16 @@
-<h1>Editing Quote</h1>
-
-<%= render 'form', quote: @quote %>
-
-<%= link_to 'Show', @quote %> |
-<%= link_to 'Back', quotes_path %>
+<div class="row">
+	<div class="col-md-7">
+		<div class="panel panel-default">
+			<div class="panel panel-heading">
+				<h3><b>Editing Quote</b></h3>
+			</div>
+			<div class="panel panel-body">
+				<%= render 'form', quote: @quote %>
+			</div>
+			<div class="panel panel-footer" style="margin-top: -10px;">
+				<div class="btn btn-default"><b><%= link_to 'Show', @cquote, {:style=>'color:orange;'} %></b></div>
+				<div class="btn btn-default"><b><%= link_to 'Back', quotes_path, {:style=>'color:black;'} %></b></div>
+			</div>
+		</div>
+	</div>
+</div>
